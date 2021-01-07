@@ -54,7 +54,6 @@ while True:
         OpenApplication(listt)
     elif listt[0].lower() == 'play':
         from googlesearch import search
-
         query = ''
         for a in listt:
             query = query + ' ' + a
