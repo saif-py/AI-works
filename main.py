@@ -64,5 +64,5 @@ while True:
                 webbrowser.get('firefox').open_new_tab(j)
                 webbrowser.open(j)
                 break
-    elif listt[0].lower() == "shutdown":
-        call("shutdown now")
+    # elif listt[0].lower() == "shutdown":
+    #     call("shutdown now")
