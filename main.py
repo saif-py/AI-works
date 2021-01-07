@@ -54,6 +54,7 @@ while True:
         OpenApplication(listt)
     elif listt[0].lower() == 'play':
         from googlesearch import search
+
         query = ''
         for a in listt:
             query = query + ' ' + a
@@ -63,3 +64,5 @@ while True:
                 webbrowser.get('firefox').open_new_tab(j)
                 webbrowser.open(j)
                 break
+    elif listt[0].lower() == "shutdown":
+        call("shutdown now")
