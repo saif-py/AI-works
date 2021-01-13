@@ -70,8 +70,8 @@ while True:
                 # # pyautogui.write(j)
                 # pyautogui.hotkey('enter')
                 break
-    elif listt[0].lower() == "shutdown":
-        call("shutdown now")
+    # elif listt[0].lower() == "shutdown":
+        # call("shutdown now")      
     else:
         command = os.popen(str).readlines()
         print(command)
