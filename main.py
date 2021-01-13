@@ -2,17 +2,19 @@ import speech_recognition as sr
 import os
 from subprocess import call
 import webbrowser
+import pyautogui
+import time
 
 listt = []
 
 
 def OpenApplication(listt):
     if listt[0].lower() == 'open':
-        a = os.popen("""
+        command = os.popen("""
            aptitude -F' * %p -> %d ' --no-gui --disable-columns search '?and(~i,!?section(libs), 
            !?section(kernel), !?section(devel))'
             """).readlines()
-        for i in a:
+        for i in command:
             if i.__contains__(listt[1].lower()):
                 print(i)
                 i = i.split()
@@ -62,7 +64,14 @@ while True:
             k = j.split('/')
             if k[2] == 'www.amazon.com' or k[2] == 'www.netflix.com' or k[2] == 'www.primevideo.com':
                 webbrowser.get('firefox').open_new_tab(j)
-                webbrowser.open(j)
+                # webbrowser.open(j)
+                # OpenApplication(['open', 'firefox'])
+                # # time.sleep(2)
+                # # pyautogui.write(j)
+                # pyautogui.hotkey('enter')
                 break
-    # elif listt[0].lower() == "shutdown":
-    #     call("shutdown now")
+    elif listt[0].lower() == "shutdown":
+        call("shutdown now")
+    else:
+        command = os.popen(str).readlines()
+        print(command)
